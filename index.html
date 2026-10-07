@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>PocketSmart AI</title>
+
+    <link rel="stylesheet"
+          href="/static/style.css">
+</head>
+
+<body>
+    <header class="navbar">
+        <a href="/" class="logo">
+            PocketSmart <span>AI</span>
+        </a>
+
+        <p>Your Smart Budget Assistant</p>
+    </header>
+
+    <main class="container">
+        <section class="hero">
+            <p class="tag">SMART PLANNING STARTS HERE</p>
+
+            <h1>
+                Plan better.<br>
+                Spend smarter.
+            </h1>
+
+            <p>
+                Get personalized recommendations
+                for your budget, lifestyle and needs.
+            </p>
+
+            <div class="hero-tags">
+                <span>Home Interior</span>
+                <span>Party Planning</span>
+                <span>Jewelry</span>
+            </div>
+        </section>
+
+        <section class="planner">
+            <h2>What are you planning?</h2>
+
+            <div class="tabs">
+                <button class="tab active"
+                        data-category="home">
+                    🏡 Home Interior
+                </button>
+
+                <button class="tab"
+                        data-category="party">
+                    🎉 Party Planner
+                </button>
+
+                <button class="tab"
+                        data-category="jewelry">
+                    ✨ Jewelry
+                </button>
+            </div>
+
+            <form id="planner-form">
+                <input type="hidden"
+                       id="category"
+                       value="home">
+
+                <label for="budget">
+                    Total Budget (₹)
+                </label>
+
+                <input type="number"
+                       id="budget"
+                       min="1"
+                       step="1"
+                       placeholder="Enter your budget"
+                       required>
+
+                <label for="preferences"
+                       id="preference-label">
+                    Room and Style Preferences
+                </label>
+
+                <input type="text"
+                       id="preferences"
+                       maxlength="1000"
+                       placeholder="Example: Small bedroom, modern style"
+                       required>
+
+                <label for="extra"
+                       id="extra-label">
+                    Additional Details
+                </label>
+
+                <textarea id="extra"
+                          rows="4"
+                          placeholder="Enter more details (optional)"></textarea>
+
+                <div id="image-field" class="hidden">
+                    <label for="outfit-image">
+                        Upload Outfit Image (Optional)
+                    </label>
+
+                    <input type="file"
+                           id="outfit-image"
+                           accept="image/png,image/jpeg,image/webp">
+                </div>
+
+                <button type="submit"
+                        id="submit-btn"
+                        class="primary-btn">
+                    Generate My Plan →
+                </button>
+            </form>
+
+            <section id="result-section" class="hidden">
+                <h2>Your Recommendations</h2>
+
+                <div id="result"
+                     class="result-card"
+                     aria-live="polite">
+                </div>
+
+                <button id="copy-btn"
+                        type="button"
+                        class="copy-btn">
+                    Copy Recommendations
+                </button>
+
+                <p class="note">
+                    Prices are estimates. Check actual
+                    prices and availability with providers.
+                </p>
+            </section>
+        </section>
+
+        <footer>
+            <p>© 2026 PocketSmart AI</p>
+            <p>Plan within your budget.</p>
+        </footer>
+    </main>
+
+    <script src="/static/script.js"></script>
+</body>
+</html>
